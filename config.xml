@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="ga.calcare" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CalCARE</name>
+    <description>
+        A new weather based online calendar built to help you schedule your personal events, avoiding bad weather :)
+    </description>
+    <author email="fabrizio.ferrai@gmail.com" href="http://calcare.ga">
+        CalCARE Developers
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

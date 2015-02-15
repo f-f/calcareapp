@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B9C2A818-5606-4261-AF51-25962F757BDE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CalCARE</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>09659818-3253-4218-B2B0-3A8FBC9BE630</key>
+		<string>https://code.google.com/p/meteocal-fgg/</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>calcareapp/platforms/ios/CalCARE.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>09659818-3253-4218-B2B0-3A8FBC9BE630</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://code.google.com/p/meteocal-fgg/</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>09659818-3253-4218-B2B0-3A8FBC9BE630</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>09659818-3253-4218-B2B0-3A8FBC9BE630</string>
+			<key>IDESourceControlWCCName</key>
+			<string>meteocal-fgg</string>
+		</dict>
+	</array>
+</dict>
+</plist>

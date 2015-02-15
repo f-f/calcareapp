@@ -1,0 +1,146 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-weight: 300;
+    font-size: 16px;
+    overflow: hidden;
+    -webkit-transition: opacity 400ms;
+    -moz-transition: opacity 400ms;
+    transition: opacity 400ms;
+    display: block;
+    position: static;
+}
+
+#landing, #userPageWrapper {
+    width: calc(100% + 18px);
+    overflow-y: scroll;
+    height: calc(100% + 30px);
+    position: absolute;
+    top: 0px;
+}
+
+#landing{
+    background: url('../img/background.jpg') no-repeat center;
+}
+
+.jumbotron {
+    margin-top: 50px;
+    background-color: transparent;
+    color: white;
+    text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.jumbotron p {
+    margin: 1em 20%;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.jumbotron .alert{
+    margin-top: 1em;
+}
+
+#landing .navbar-inverse {
+    background-color:rgba(0,0,0,0.2);
+    border: 0px;
+}
+
+.navbar-inverse .container {
+    margin-top: 0px;
+}
+
+#submitButton {
+    margin-top: 1em;    
+}
+
+#calendarWrapper {
+    margin-top: 50px;
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+#calendarContainer {
+    margin-right: 15px;
+}
+
+#calendarContainer .controls{
+    margin: 30px 0;
+}
+
+#calendarContainer .controls h3 {
+    display: inline;
+}
+
+#notificationsContainer:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    content: "Notifications";
+}
+
+#notificationsContainer {
+    margin-right: 0px;
+    margin-left: -15px;
+    background-color: #FFF;
+    border-color: #DDD;
+    border-width: 1px;
+    border-radius: 4px 4px 0px 0px;
+    box-shadow: none;
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 15px -15px 15px;
+    border-style: solid;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+/* REALLY BAD BOOTSTRAP HACK */
+body, body.modal {
+    padding-right: 0 !important;
+    overflow-y: hidden;
+}
+
+#eventCreateModal .list-group-item button, #searchResults .list-group-item button{
+    margin-top: -4px;
+}
+
+.badge {
+    background-color: #BF1E1E;
+    border-radius: 0 0 0 10px;
+}
+
+.responsive-calendar .day .badge {
+    top: 0px;
+    right: 0px;
+    z-index: 1000;
+}
+
+/*from https://gist.github.com/alexandrevicenzi/680147013e902a4eaa5d */
+.glyphicon-refresh-animate {
+-animation: spin .7s infinite linear;
+-ms-animation: spin .7s infinite linear;
+-webkit-animation: spinw .7s infinite linear;
+-moz-animation: spinm .7s infinite linear;
+}
+ 
+@keyframes spin {
+from { transform: scale(1) rotate(0deg);}
+to { transform: scale(1) rotate(360deg);}
+}
+@-webkit-keyframes spinw {
+from { -webkit-transform: rotate(0deg);}
+to { -webkit-transform: rotate(360deg);}
+}
+ 
+@-moz-keyframes spinm {
+from { -moz-transform: rotate(0deg);}
+to { -moz-transform: rotate(360deg);}
+} 
