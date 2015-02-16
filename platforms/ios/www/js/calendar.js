@@ -132,7 +132,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
     $scope.newPasswordSubmit = function(newPassword, resetToken){
         $http({
             method: 'POST',
-            url: "api/auth/reset/confirm/?token="+resetToken,
+            url: "http://calcare.ga/api/auth/reset/confirm/?token="+resetToken,
             data: $.param({password: newPassword}),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
@@ -152,7 +152,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         $scope.landingNotif = generateLoading($sce);
         $http({
             method: 'POST',
-            url: "api/auth/reset/request",
+            url: "http://calcare.ga/api/auth/reset/request",
             data: $.param({email: reset.email}),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
@@ -173,7 +173,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         
         $http({
             method: 'GET',
-            url: "api/calendars/"+id,
+            url: "http://calcare.ga/api/calendars/"+id,
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
         .success(function(data) {
@@ -257,7 +257,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         //get the user notifications
         $http({
             method: 'GET',
-            url: "api/notifications",
+            url: "http://calcare.ga/api/notifications",
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
         .success(function(data) {
@@ -271,7 +271,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         //calendar info
         $http({
             method: 'GET',
-            url: "api/calendars/mine",
+            url: "http://calcare.ga/api/calendars/mine",
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
         .success(function(data) {
@@ -306,7 +306,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
     $scope.loginSubmit = function(loginInfo) {
         $http({
             method: 'POST',
-            url: "api/auth/login",
+            url: "http://calcare.ga/api/auth/login",
             data: $.param({email: loginInfo.email, password: loginInfo.password}),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
@@ -320,7 +320,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
     };
     
     $scope.signupSubmit = function(signupData) {
-        $http.post("api/users/", signupData)
+        $http.post("http://calcare.ga/api/users/", signupData)
         .success(function(data) {
             $scope.landingNotif = generateNotif('Welcome aboard!', 'We have sent you an email with a confirmation link, please click on it, and your account will be activated.', 'success', $sce);
         })
@@ -338,7 +338,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         $scope.eventCreateNotif = generateLoading($sce);
         $http({
             method: 'POST',
-            url: "api/events",
+            url: "http://calcare.ga/api/events",
             data: eventCreate,
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
@@ -359,7 +359,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
     $scope.searchUsers = function(searchObject) {
         $http({
             method: 'GET',
-            url: "api/calendars/?search="+searchObject.searchField,
+            url: "http://calcare.ga/api/calendars/?search="+searchObject.searchField,
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
         .success(function(data) {
@@ -383,7 +383,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
     $scope.updatePublicCalFlag = function(){
         $http({
             method: 'PUT',
-            url: "api/calendars/me",
+            url: "http://calcare.ga/api/calendars/me",
             data: $scope.myCal,
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
@@ -401,7 +401,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         console.log(user);
         $http({
             method: 'PUT',
-            url: "api/users/me",
+            url: "http://calcare.ga/api/users/me",
             data: user,
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
@@ -417,7 +417,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
     $scope.deleteNotif = function(id){
         $http({
             method: 'DELETE',
-            url: "api/notifications/"+id,
+            url: "http://calcare.ga/api/notifications/"+id,
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
         .success(function(data) {
@@ -448,7 +448,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         $scope.eventEditNotif = generateLoading($sce);
         $http({
             method: 'PUT',
-            url: "api/events/"+eventEdit.event.id,
+            url: "http://calcare.ga/api/events/"+eventEdit.event.id,
             data: eventEdit,
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
@@ -468,7 +468,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
     $scope.deleteEvent = function(currentEvent) {
         $http({
             method: 'DELETE',
-            url: "api/events/"+currentEvent.id,
+            url: "http://calcare.ga/api/events/"+currentEvent.id,
             headers: {'Authorization': 'Bearer ' + $localStorage.token}
         })
         .success(function(data) {
@@ -489,7 +489,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         if(newVal !== "maybe"){
             $http({
                 method: 'PUT',
-                url: "api/participations/"+currentEvent.id,
+                url: "http://calcare.ga/api/participations/"+currentEvent.id,
                 data: currentEvent.myP,
                 headers: {'Authorization': 'Bearer ' + $localStorage.token}
             })
@@ -536,7 +536,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         //Take the first selected file
         fd.append("file", files[0]);
 
-        $http.post("api/calendars/import", fd, {
+        $http.post("http://calcare.ga/api/calendars/import", fd, {
             withCredentials: true,
             headers: {'Content-Type': undefined, 'Authorization': 'Bearer ' + $localStorage.token },
             transformRequest: angular.identity
@@ -555,7 +555,7 @@ calApp.controller("CalendarController", function ($scope, $http, $sce, $localSto
         // Use an arraybuffer
         $http({
             method: 'GET',
-            url: "api/calendars/export",
+            url: "http://calcare.ga/api/calendars/export",
             headers: {'Authorization': 'Bearer ' + $localStorage.token},
             responseType: 'arraybuffer'
         })
