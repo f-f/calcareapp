@@ -672,4 +672,11 @@ $(document).ready(function() {
     $(window).resize(function(){
         positionBG();
     });
+
+
+    $("li.dropdown a").click(function(e){
+        $(this).next('ul.dropdown-menu').css("display", "block");
+            e.stopPropagation();
+        });
+    });
 });
